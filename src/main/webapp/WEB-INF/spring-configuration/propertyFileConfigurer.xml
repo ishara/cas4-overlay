@@ -34,8 +34,10 @@
 		can be moved between tiers without modification.
 	</description>
 
-    <util:properties id="casProperties" location="file:/etc/cas/cas.properties" />
+    <util:properties id="casProperties" location="file:E:\RND\CAS\simple-cas4-overlay-template\etc\cas.properties" />
 
     <context:property-placeholder properties-ref="casProperties" />
+	<!--<bean id="primaryAuthenticationHandler" class="com.comlanka.cas.handler.TokenAuthenticationHandler"/>-->
+	<!--<alias name="tokenAuthenticationHandler" alias="primaryAuthenticationHandler" />-->
 
 </beans>

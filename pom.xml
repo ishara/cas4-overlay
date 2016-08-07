@@ -57,6 +57,7 @@
                     <webApp>
                         <contextPath>/cas</contextPath>
                         <overrideDescriptor>${basedir}/etc/jetty/web.xml</overrideDescriptor>
+                        <allowDuplicateFragmentNames>true</allowDuplicateFragmentNames>
                     </webApp>
                     <jvmArgs>-Xdebug -Xrunjdwp:transport=dt_socket,address=5000,server=y,suspend=n</jvmArgs>
                 </configuration>
@@ -76,15 +77,40 @@
 
         <dependency>
             <groupId>org.jasig.cas</groupId>
-            <artifactId>cas-server-support-saml</artifactId>
+            <artifactId>cas-server-core</artifactId>
             <version>${cas.version}</version>
-            <scope>runtime</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.jasig.cas</groupId>
+            <artifactId>cas-server-core-webflow</artifactId>
+            <version>${cas.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.jasig.cas</groupId>
+            <artifactId>cas-server-support-token-webflow</artifactId>
+            <version>${cas.version}</version>
+        </dependency>
+        <!--<dependency>-->
+            <!--<groupId>org.jasig.cas</groupId>-->
+            <!--<artifactId>cas-server-integration-pac4j</artifactId>-->
+            <!--<version>${cas.version}</version>-->
+        <!--</dependency>-->
+        <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>javax.servlet-api</artifactId>
+            <version>3.1.0</version>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.jasig.cas</groupId>
+            <artifactId>cas-server-support-pac4j-webflow</artifactId>
+            <version>${cas.version}</version>
         </dependency>
 
     </dependencies>
 
     <properties>
-        <cas.version>4.2.1</cas.version>
+        <cas.version>4.2.4</cas.version>
         <maven-jetty-plugin.version>9.3.6.v20151106</maven-jetty-plugin.version>
         <maven.compiler.source>1.7</maven.compiler.source>
         <maven.compiler.target>1.7</maven.compiler.target>
